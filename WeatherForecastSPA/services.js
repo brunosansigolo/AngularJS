@@ -1,7 +1,7 @@
 // Services
 // Share some data between homepage and forecast page
 weatherApp.service('cityService', function(){
-    this.city = "Fareham";
+    this.city = "";
 });
 
 weatherApp.service('weatherService', ['$resource', function($resource) {
