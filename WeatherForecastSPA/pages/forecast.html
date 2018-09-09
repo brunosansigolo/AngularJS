@@ -1,0 +1,18 @@
+<p><a href="#">Back to Search</a></p>
+
+<h2><small>Forecast for</small> {{ weatherResult.city.name }}, {{ weatherResult.city.country }}</h2>
+<hr />
+    <div class="row">
+        <div class="col-md-3">
+                Forecasts: <a href="#/forecast/2" ng-class="{ 'bg-primary': forecasts === '2' }">2</a> | <a href="#/forecast/4" ng-class="{ 'bg-primary': forecasts === '4' }">4</a> | <a href="#/forecast/8" ng-class="{ 'bg-primary': forecasts === '8' }">8</a> | <a href="#/forecast/16" ng-class="{ 'bg-primary': forecasts === '16' }">16</a>
+        </div>
+        <div class="col-md-3 col-md-offset-6 text-right">
+            Temperature Scale: <select ng-options="unit.name for unit in units" ng-model="selected"></select>
+        </div>
+    </div>
+<hr />
+<div class="row">
+    <div class="col-md-3" ng-repeat="w in weatherResult.list">
+        <weather-report weather-by-three-hours="w" convert-to-standard="convertToStandard(temp, selected.unit)" convert-to-date="convertToDate(dt)" date-format="EEE, dd MMM yyyy - hh:mm a"></weather-report>
+    </div>
+</div>
