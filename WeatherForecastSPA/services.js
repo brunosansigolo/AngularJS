@@ -1,13 +1,7 @@
 // Services
 // Share some data between homepage and forecast page
 weatherApp.service('cityService', function(){
-    this.city = "";
-    this.units = [
-        {name: "Celsius",unit: "C"},
-        {name: "Fahrenheit",unit: "F"},
-        {name: "Kelvin",unit: "K"}
-    ];
-    this.unit = this.units[1];
+    this.city = "Fareham";
 });
 
 weatherApp.service('weatherService', ['$resource', function($resource) {
@@ -15,4 +9,10 @@ weatherApp.service('weatherService', ['$resource', function($resource) {
         var weatherAPI = $resource("https://api.openweathermap.org/data/2.5/forecast");
         return weatherAPI.get({q: city, cnt: forecasts, appid: "f1eda1928b1f7a2e9148867245bc3aa7" });
     };
+    this.units = [
+        {name: "Celsius",unit: "C"},
+        {name: "Fahrenheit",unit: "F"},
+        {name: "Kelvin",unit: "K"}
+    ];
+    this.unit = this.units[0];
 }]);

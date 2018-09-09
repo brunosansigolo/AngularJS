@@ -12,8 +12,11 @@ weatherApp.controller('homeController', ['$scope', '$location', 'cityService', f
 weatherApp.controller('forecastController', ['$scope', '$routeParams', 'cityService', 'weatherService', function($scope, $routeParams, cityService, weatherService){
     $scope.city = cityService.city;
     $scope.forecasts = $routeParams.forecasts || '2';
-    $scope.units = cityService.units;
-    $scope.selected = cityService.unit;
+    $scope.units = weatherService.units;
+    $scope.selected = weatherService.unit;
+    $scope.$watch('selected', function() {
+        weatherService.unit = $scope.selected;
+    });
     $scope.weatherResult = weatherService.GetWeather($scope.city, $scope.forecasts);
     $scope.convertToStandard = function(deg, unit) {
         if (unit === 'C') {

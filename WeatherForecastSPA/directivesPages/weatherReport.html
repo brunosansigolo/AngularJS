@@ -3,7 +3,7 @@
             <h3 class="panel-title">{{ convertToDate({ dt: weatherByThreeHours.dt }) | date: dateFormat }}</h3>
         </div>
         <div class="panel-body text-center">
-            <img ng-src="http://openweathermap.org/img/w/{{ weatherByThreeHours.weather[0].icon }}.png" alt="weather icon">
+            <img ng-src="https://openweathermap.org/img/w/{{ weatherByThreeHours.weather[0].icon }}.png" alt="weather icon">
             <p><small>{{ weatherByThreeHours.weather[0].description }}</small></p>
             <h3><strong><small>Temperature:</strong></small> {{ convertToStandard({ temp: weatherByThreeHours.main.temp }) }}</h3>
             <!-- <p><strong>Min:</strong> {{ convertToStandard({ temp: weatherByThreeHours.main.temp_min }) }}</p>
