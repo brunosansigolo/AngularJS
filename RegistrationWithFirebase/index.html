@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration with Firebase</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,100,700,900" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular-route.min.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBzxwt3e1-fXPltPbMKeaqeszM-u-yHdv0",
+            authDomain: "angularregistration-2574b.firebaseapp.com",
+            databaseURL: "https://angularregistration-2574b.firebaseio.com",
+            projectId: "angularregistration-2574b",
+            storageBucket: "",
+            messagingSenderId: "581742416597"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.1.0/angularfire.min.js"></script>
+
+    <script src="/js/lib/app.js"></script>
+    <script src="/js/services/authentication.js"></script>
+    <script src="/js/controllers/registration.js"></script>
+    <script src="/js/controllers/success.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="cf" ng-include="'views/nav.html'"></nav>
+    </header>
+    <div class="page">
+        <main class="cf" ng-view>
+        </main>
+    </div>
+</body>
+</html>
